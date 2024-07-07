@@ -1,25 +1,40 @@
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
 
-function ListGroup() {
-    let items = [
-        'New York',
-        'San Francisco',
-        'Tokyo',
-        'London',
-        'Paris'
-    ];
+interface Props {
+  items: string[];
+  heading: string;
+  onSelectItem: (item: string) => void;
+}
 
-    if (items.length === 0)
-        return <p>No item found</p>;
+function ListGroup(props: Props) {
+  // { items: [], heading: string}
 
-    return (
+  // Hook
+  const [selectedIndex, setSelectedIndex] = useState(-1);
+
+  return (
     <Fragment>
-        <h1>List</h1>
-        <ul className="list-group">
-            {items.map(item => <li key={item}>{item}</li>)}
-        </ul>
+      <h1>{props.heading}</h1>
+      <ul className="list-group">
+        {props.items.map((item, index) => (
+          <li
+            className={
+              selectedIndex === index
+                ? "list-group-item active"
+                : "list-group-item"
+            }
+            key={item}
+            onClick={() => {
+              setSelectedIndex(index);
+              props.onSelectItem(item);
+            }}
+          >
+            {item}
+          </li>
+        ))}
+      </ul>
     </Fragment>
-    )
+  );
 }
 
 export default ListGroup;
