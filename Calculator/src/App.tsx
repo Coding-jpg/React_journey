@@ -1,4 +1,4 @@
-import { Container, Paper, styled, Grid } from "@mui/material";
+import { Container, Paper, styled, Grid, Button } from "@mui/material";
 import theme from "./theme";
 import React, { useState } from "react";
 import { GridOperationButton } from "./components/GridOperationButton";
@@ -24,6 +24,38 @@ function App() {
   const [operation, setOperation] = useState("");
   const [prevValue, setPrevValue] = useState("");
   const [overwrite, setOverwrite] = useState(true);
+
+  const calculate = () => {
+    if (!prevValue || !operation) return currentValue;
+
+    const curr = parseFloat(currentValue);
+    const prev = parseFloat(prevValue);
+
+    let result;
+    switch (operation) {
+      case "+":
+        result = prev + curr;
+        break;
+      case "*":
+        result = prev * curr;
+        break;
+      case "-":
+        result = prev - curr;
+        break;
+      case "/":
+        result = prev / curr;
+        break;
+    }
+    return result;
+  };
+
+  const equals = () => {
+    const val = calculate();
+    setCurrentValue(`${val}`);
+    setPrevValue("");
+    setOperation("");
+    setOverwrite(true);
+  };
 
   const clear = () => {
     setPrevValue("");
@@ -128,11 +160,11 @@ function App() {
               enterDigit={setDigit}
               xs={6}
             ></GridDigitButton>
-            <GridOperationButton
-              operation="="
-              selectOperation={selectOperation}
-              selectedOperation={operation}
-            ></GridOperationButton>
+            <Grid item xs={3}>
+              <Button fullWidth variant="contained" onClick={equals}>
+                =
+              </Button>
+            </Grid>
           </Grid>
         </Grid>
       </CalculatorBase>
