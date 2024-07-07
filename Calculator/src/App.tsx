@@ -1,6 +1,5 @@
 import { Container, Paper, styled, Grid, Button } from "@mui/material";
-import theme from "./theme";
-import React, { useState } from "react";
+import { useState } from "react";
 import { GridOperationButton } from "./components/GridOperationButton";
 import { GridDigitButton } from "./components/GridDigitButton";
 
