@@ -75,6 +75,13 @@ function App() {
   };
 
   const selectOperation = (operation: string) => {
+    if (prevValue) {
+      const val = calculate();
+      setCurrentValue(`${val}`);
+      setPrevValue(`${val}`);
+    } else {
+      setPrevValue(currentValue);
+    }
     setPrevValue(currentValue);
     setOperation(operation);
     setOverwrite(true);
