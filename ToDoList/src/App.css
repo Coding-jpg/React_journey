@@ -1,0 +1,49 @@
+/* Styles for centering the app */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* 100% viewport height */
+  overflow-y: auto; /* 添加垂直滚动条 */
+}
+
+/* Styles for input row */
+.inputRow {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* Styles for header */
+.header {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+/* Styles for list */
+.list {
+  list-style-type: none;
+  padding: 0;
+  width: 300px; /* 列表容器宽度 */
+  border: 1px solid #ccc;
+  overflow-y: auto; /* 添加垂直滚动条 */
+}
+
+/* Styles for list items */
+.list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+/* Styles for checkbox */
+.list li .MuiCheckbox-root {
+  margin-right: 10px;
+}
+
+/* Styles for delete button */
+.list li .MuiButton-root {
+  margin-left: 10px;
+}
