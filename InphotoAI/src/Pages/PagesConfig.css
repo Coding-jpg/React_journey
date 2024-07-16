@@ -1,0 +1,68 @@
+/* Landing Page */
+
+.landing-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: #f5f5f5;
+  position: relative;
+}
+
+.tradeMark {
+  position: absolute;
+  left: 40px;
+  top: 40px;
+}
+
+.User {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+.title {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin-bottom: 20px;
+  font-size: 6rem;
+}
+
+.slogan {
+  text-align: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 3rem;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  list-style-type: none;
+}
+
+.btn-landing {
+  text-align: center;
+  color: #004d99;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+  .title {
+    font-size: 1.5em;
+  }
+  .slogan {
+    font-size: 0.9em;
+  }
+  .btn-landing {
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.2em;
+  }
+  .slogan {
+    font-size: 0.8em;
+  }
+}
