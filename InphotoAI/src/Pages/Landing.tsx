@@ -5,7 +5,7 @@ import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 function Landing() {
   return (
     <div className="landing-container">
-      <div className="tradeMark">TradeMark</div>
+      <div className="logo-left">Logo</div>
       <IconButton className="User">
         <AccountCircleIcon />
       </IconButton>
