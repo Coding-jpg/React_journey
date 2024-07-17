@@ -27,8 +27,8 @@ function Tool() {
       <ul className="heading-line-tool">
         <img className="logo-left-tool" src={logoImg}></img>
         <li className="icon">
-          <IconButton className="user-icon">
-            <AccountCircleIcon />
+          <IconButton className="user-icon-tool">
+            <AccountCircleIcon fontSize="large" />
           </IconButton>
         </li>
       </ul>

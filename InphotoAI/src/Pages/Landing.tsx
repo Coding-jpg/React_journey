@@ -10,7 +10,7 @@ function Landing() {
         <img className="logo-left" src={logoImg}></img>
         <li className="icon">
           <IconButton className="user-icon">
-            <AccountCircleIcon />
+            <AccountCircleIcon fontSize="large" />
           </IconButton>
         </li>
       </ul>
