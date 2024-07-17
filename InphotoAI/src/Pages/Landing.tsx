@@ -1,18 +1,23 @@
 import "./PagesConfig.css";
 import { IconButton, Button } from "@mui/material";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import logoImg from "../assets/logo.png";
 
 function Landing() {
   return (
     <div className="landing-container">
-      <div className="logo-left">Logo</div>
-      <IconButton className="User">
-        <AccountCircleIcon />
-      </IconButton>
+      <ul className="heading-line">
+        <img className="logo-left" src={logoImg}></img>
+        <li className="icon">
+          <IconButton className="user-icon">
+            <AccountCircleIcon />
+          </IconButton>
+        </li>
+      </ul>
+      <div className="shadow-box"></div>
       <h1 className="title">InphotoAI</h1>
       <li className="slogan">
-        Instant AI Photo Magic: Automatically Match Your Images and Social Media
-        Post for Perfect Mood Coordination!
+        Write your post, upload the image, and let us match the emotion.
       </li>
       <Button className="btn-landing" variant="contained">
         Create

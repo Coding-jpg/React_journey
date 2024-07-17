@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { TextField, Button, Grid } from "@mui/material";
+import "./PagesConfig.css";
+import logoImg from "../assets/logo.png";
 
 function Login() {
   const [phoneNumber, setPhoneNumber] = useState("");
@@ -26,15 +28,16 @@ function Login() {
   };
   return (
     <div className="login-container">
-      <div className="logo-center">Logo</div>
+      <img className="logo-center" src={logoImg}></img>
       <li className="notification">
         Register for free to experience all features !
       </li>
-      <form onSubmit={handleSubmit}>
-        <Grid container spacing={2}>
+      <form className="form-container" onSubmit={handleSubmit}>
+        <Grid container spacing={2} className="grid-container">
           <Grid item xs={12}>
             <TextField
               fullWidth
+              className="input-field"
               id="phoneNumber"
               label="Phone Number"
               type="tel"
@@ -47,6 +50,7 @@ function Login() {
           <Grid item xs={8}>
             <TextField
               fullWidth
+              className="input-field"
               id="verificationCode"
               label="Verification Code"
               type="text"
@@ -58,6 +62,7 @@ function Login() {
           </Grid>
           <Grid item xs={4}>
             <Button
+              className="btn-verification"
               variant="contained"
               color="primary"
               onClick={handleGetVerificationCode}
@@ -66,9 +71,14 @@ function Login() {
               Get Code
             </Button>
           </Grid>
-          <Grid item xs={12}>
-            <Button type="submit" variant="contained" color="primary">
-              Submit
+          <Grid item xs={4}>
+            <Button
+              className="btn-login"
+              type="submit"
+              variant="contained"
+              color="primary"
+            >
+              Login
             </Button>
           </Grid>
         </Grid>
